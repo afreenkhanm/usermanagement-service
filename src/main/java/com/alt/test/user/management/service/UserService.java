@@ -23,12 +23,27 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
-	public Optional<User> getUserById(Long userId) {
-		return userRepository.findById(userId);
+	public User getUserById(Long userId) {
+		return userRepository.findById(userId).get();
 	}
 
 	public void deleteUser(Long userId) {
 	    userRepository.deleteById(userId);
+	}
+
+	public User updateUser(Long userId, User user) {
+	    Optional<User> userOpt = userRepository.findById(userId);
+	    
+	    if(userOpt.isPresent()) {
+	    	User existingUser = userOpt.get();
+	    	existingUser.setEmail(user.getEmail());
+		    existingUser.setLastName(user.getLastName());
+		    existingUser.setFirstName(user.getFirstName());
+		    existingUser.setPhoneNumber(user.getPhoneNumber());
+		    return userRepository.save(existingUser);
+	    }
+
+	    return null;
 	}
 
 }

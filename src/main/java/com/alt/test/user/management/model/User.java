@@ -34,6 +34,9 @@ public class User implements Serializable {
     
     @Column(name = "email_address", nullable = false)
     private String email;
+    
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     @Column(name = "created_date")
     @CreatedDate
@@ -67,6 +70,12 @@ public class User implements Serializable {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	public LocalDateTime getCreatedDate() {
 		return createdDate;
