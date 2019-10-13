@@ -1,4 +1,4 @@
-package com.alt.test.UserManagement;
+package com.alt.test.user.management;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

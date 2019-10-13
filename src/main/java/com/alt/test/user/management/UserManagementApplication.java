@@ -1,9 +1,11 @@
-package com.alt.test.UserManagement;
+package com.alt.test.user.management;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
+@EnableJpaAuditing
 public class UserManagementApplication {
 
 	public static void main(String[] args) {
